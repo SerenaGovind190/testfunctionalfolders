@@ -1,0 +1,307 @@
+<!--things to add: 
+<br> - search bar 
+<br> - dropdown filter for locations 
+<br> - log out feature-->
+
+<html>
+<head>
+    <TITLE>Serena's Private Archives</TITLE>
+    <H1>Welcome to your private archives <3</H1>
+    <style>
+        a {
+            /*color: #FF3399;*/
+            color: black;
+        }
+
+        H1, H3 {
+            font-style: oblique;
+            font-family: serif;
+        }
+
+        H4 {
+            color: #b5b5b5;
+            font-style: oblique;
+            font-family: serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            position: absolute;
+            top: 80px;
+            left: 100px;
+        }
+
+        button.logout-button {
+            background-color: FFF7FB;
+            color: black;
+            padding: 5px 10px;
+            font-size: smaller;
+            border-radius: 3px;
+            text-decoration: none;
+            float: right;
+            border: 0.5px solid black;
+        }
+    </style>
+    <script>
+        //Filter function
+        function filter() {
+            var input, filter, dl, dt, a, i, txtValue;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            dl = document.getElementById("test");
+            dt = dl.getElementsByTagName("dt");
+            for (i = 0; i < dt.length; i++) {
+                a = dt[i].getElementsByTagName("a")[0];
+                txtValue = a.textContent || a.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    dt[i].style.display = "";
+                } else {
+                    dt[i].style.display = "none";
+                }
+            }
+        }
+
+        //Location function
+        function locationFilter(location) {
+            //var filter, dl, dt, a, i, txtValue;
+            //filter = locationName.toUpperCase();
+            //dl = document.getElementById("test");
+            //dt = dl.getElementsByTagName("dt");
+            //for (i = 0; i < dt.length; i++) {
+            //    a = dt[i].getElementsByTagName("a")[0];
+            //    if (a.hasClass("Auckland")) {
+            //        dt[i].style.display = "";
+            //    } else {
+            //        dt[i].style.display = "none";
+            //    }
+            //}
+            alert("Hello! I am an alert box!!");
+
+            if ($("a").hasClass("Auckland")) {
+                alert("Hello! I am an alert box!!");
+            }
+
+        }
+
+    </script>
+    <base target="_blank">
+</head>
+<body style="background-image: url('folder BG.jpg');">
+    <button class="logout-button" <!--onclick='location.replace("test.html");'--> Logout :)</button>
+    <input type="text" id="myInput" onkeyup="filter()" placeholder="Search..." title="Filter:">
+
+    <!--<input type="text" id="locationInput" onkeyup="locationFilter()" placeholder="Location..." title="Filter:">-->
+    <!--<div class="select">
+        <select name="location" id="locationID">
+            <option></option>
+            <option>Auckland</option>
+            <option>Waiheke</option>
+            <option>Queenstown</option>
+        </select>
+        <button onclick="locationFiler('Auckland')">find</button>
+    </div>-->
+
+    <dl id="test">
+        <H3>Food</H3>
+        <DL>
+            <h4>Cafes</h4>
+            <DT><A HREF="https://www.sidatthefrenchcafe.co.nz/" class="Auckland">Sid at The French Café</A>
+            <DT><A HREF="https://www.queenieslunchroom.com/">Queenies Caffé &amp; Vino</A>
+            <DT><A HREF="https://blendcafe.co.nz/">Blend Cafe</A>
+            <DT><a href="https://www.instagram.com/cafeditto_/">Cafe Ditto</a>
+            <DT>
+                <a href="https://www.mibo.co.nz/">Mibo</a>
+
+                <h4>Bars</h4>
+            <DT><A HREF="https://faradays.store/bar/">FARADAYS</A>
+            <DT>
+                <A HREF="https://www.caretaker.net.nz/">Caretaker</A>
+                <h4>Resturants</h4>
+            <DT><a href="https://www.watda.co.nz/">Watda</a>
+            <DT><a href="https://ockheedokey.com/">OCKHEE</a>
+            <DT><A HREF="https://parisbutter.co.nz/">Paris Butter</A>
+            <DT><A HREF="https://www.picipasta.co.nz/">Pici Pasta</A>
+            <DT><A HREF="https://www.bossi.co.nz/bossi-restaurant/">Bossi</A>
+            <DT><A HREF="https://www.adarestaurant.co.nz/">Ada</A>
+            <DT><A HREF="https://www.atelierkrd.co.nz/">Atelier</A>
+            <DT><A HREF="https://www.roddandgunn.com/nz/the-lodge-bar/auckland">Rodd and Gunn Lodge Bar</A>
+            <DT><A HREF="https://ghoststreetakl.nz/">Ghost Street</A>
+            <DT><A HREF="https://oysterandchop.co.nz/the-terrace/">The Terrace</A>
+            <DT><A HREF="https://kingibritomart.com/kingi-private/">Kingi Private</A>
+            <DT><A HREF="https://cafehanoi.co.nz/">Cafe Hanoi</A></DT>
+            <dt><a href="https://thegroverestaurant.co.nz/">The Grove</a></dt>
+            <DT><A HREF="https://britomart.org/eating-drinking/">Britomart Resturant List</A>
+            <DT><A HREF="https://savor.co.nz/restaurants-and-bars">Savor Resturant List</A>
+            <DT><A HREF="https://www.thedenizen.co.nz/gastronomy/get-intimate-with-denizens-ultimate-private-dining-guide/">Private Dining List</A>
+            <DT><A HREF="https://www.theurbanlist.com/nz/a-list/restaurants-auckland">50 Of The Best Restaurants In Auckland 2023 | Urban List NZ</A>
+        </DL>
+        <p>
+            <br>
+            <H3>Projects</H3>
+            <DL>
+                <h4>Render Companies</h4>
+                <DT><A HREF="https://www.onetoonehundred.com/architectural-visualisation">One to One Hundred | Architectural Rendering</A>
+                <DT>
+                    <A HREF="https://walkerandco.com.au/">Walker & Co.</A>
+
+                    <h4>Brochures</h4>
+                <DT><A HREF="file:///C:/Users/seren/Downloads/ELYSIAN_IM_FINAL%208August2023[39].pdf">EYLSIAN</A></DT>
+                <DT><A HREF="file:///C:/Users/seren/Downloads/Pompallier+on+Ponsonby+web+book.pdf">Pompallier on Ponsonby</A></DT>
+                <DT><A HREF="file:///C:/Users/seren/Downloads/Waimarino%20Villa%20Sales%20Brochure%20(Jan%202024).pdf">Waimarino Still Waters</A></DT>
+
+                <h4>Concept</h4>
+                <DT><A HREF="https://www.vervemagazine.co.nz/exquisite-living/">Exquisite Living - Verve Magazine</A>
+                <DT>
+                    <A HREF="https://yorkhouse.co.nz/">York House</A>
+                    <h4>In Progress</h4>
+                <DT><A HREF="https://www.northbrook.co.nz/">Northbrook</A>
+                <DT>
+                <DT><A HREF="https://amaialiving.co.nz/">Amaia of Takapuna</A>
+                <DT><A HREF="https://thegreenhouse.apartments/">The Greenhouse</A>
+                <DT><A HREF="https://www.seascapeauckland.co.nz/">Seascape</A>
+                <DT><A HREF="https://www.elysian-parnell.nz/">Elysian</A>
+                <DT><A HREF="https://www.vanguardandco.nz/shellybeach">Vanguard and Co</A>
+                <DT>
+                    <A HREF="https://www.pop.nz/pompallier">Pompallier on Ponsonby</A>
+                <DT><a href="https://www.onesaintstephens.co.nz/">One Saint Staphens</a></DT>
+                <h4>Completed</h4>
+                <A HREF="https://www.elementumlongbay.co.nz/apartments">Elementum</A>
+                <dt><a href="https://www.waimarinolodge.com/">Waimarino Lodge - Queenstown</a></dt>
+                <h4>Architecture/Constuction Companies</h4>
+                <DT><A HREF="https://studiojohnirving.com/projects/">Studio John Irving Architects</A>
+                <DT><A HREF="https://peddlethorp.co.nz/">Peddlethorp</A>
+                <DT><A HREF="https://www.yogogroup.com/">Yogo Group - Developers of Luxury Living in London UK</A>
+                <DT><A HREF="https://lepconstruction.co.nz/projects">LEP Construction</A>
+                <DT><A HREF="https://www.monkmackenzie.com/">Monk Mackenzie</A>
+                <DT><A HREF="https://fransilvestrearquitectos.com/en/">FRAN SILVESTRE ARQUITECTOS™ | Architects Spain</A>
+                <DT><A HREF="https://www.andandand.studio/projects">And And And Studio</A>
+                <DT><A HREF="https://firstlightstudio.co.nz/">First Light Studio</A>
+                <DT><A HREF="https://hbarchitecture.co.nz/">HB Architecture</A>
+                <DT><A HREF="https://fearonhay.com/">Fearon Hay</A>
+                <DT><A HREF="https://studiojohnirving.com/project/the-farmhouse">The Farmhouse – studio john irving architects</A>
+                <DT><A HREF="https://jackmckinney.co.nz/">Jack Mckinney Architects</A>
+                <DT><A HREF="https://www.masonandwales.com/all-work"> Wales Architects</A>
+                <DT><A HREF="https://www.richardsandspence.com/built">Richards and Spence</A>
+                <DT><A HREF="https://www.ema-architects.com/projects">ema-architects</A>
+                <DT><A HREF="https://pattersons.com/">Patterson</A>
+            </DL>
+        <p>
+            <br>
+            <H3>Hotels</H3>
+            <DL>
+                <h4>New Zealand</h4>
+                <DT><A HREF="https://kamana.co.nz/">Kamana Lake House in Queenstown</A>
+                <DT><A HREF="https://thehotelbritomart.com/">The Hotel Britomart</A>
+                <dt><a href="https://www.abstracthotel.co.nz/">Abstract Hotel</a>
+                <DT>
+                    <A HREF="https://www.ahipara.com/">Ahipara Luxury Travel</A>
+                    <h4>Australia</h4>
+                <DT><A HREF="https://raes.com.au/rooms/suite-5/#main">Raes on Wategos - Suite 5</A>
+                <DT><A HREF="https://www.theridgenelsonbay.com.au/">The Ridge in Nelson Bay</A>
+                <DT><A HREF="https://thecalilehotel.com/">The Calile Hotel in Brisbane</A>
+                <DT><A HREF="https://www.oxfordhouse.com.au/">Oxford House in Sydney</A>
+                <DT><A HREF="https://abyadina.com/">A by Adina</A>
+                <DT>
+                    <A HREF="https://paramounthousehotel.com/">Paramount House Hotel in NSW</A>
+                    <h4>International</h4>
+                <DT><A HREF="https://www.admagazine.com/galerias/mejores-hoteles-del-mundo-los-disenos-mas-esperados-en-2023">World&#39;s Best Hotels: Top 20 Most Anticipated Designs in 2023 | Architectural Digest</A>
+                <DT><A HREF="https://www.casaledellaluna.com/">Casale della luna Ferienhaus in der Toskana</A>
+                <DT><A HREF="https://www.braganza-house.com/">Braganza House in Sri Lanka</A>
+                <DT><A HREF="https://www.editionhotels.com/">EDITION Hotels</A>
+                <DT><A HREF="https://www.ourhabitas.com/">Our Habitas</A>
+                <DT><A HREF="https://oleaallsuitehotel.com/">Olea All Suite Hotel in Greece</A>
+                <DT><A HREF="https://www.harrietsrooftop.com/">Harriet&#39;s in Hollywood</A>
+                <DT><A HREF="https://www.1hotels.com/">1 Hotel</A>
+                <DT><a href="https://www.panpacific.com/en/hotels-and-resorts/pr-collection-pickering/rooms.html">Parkroyal Collection Pickering in Singapore</a>
+                <DT><a href="https://thebedford.ca/">The Bedford Apartments in Toronto</a>
+            </DL>
+        <p>
+            <br>
+            <H3>Castaways</H3>
+            <DL>
+                <DT><A HREF="https://www.canopycamping.co.nz/find-your-escape">Find your Escape | Canopy Camping Escapes</A>
+                <DT><A HREF="https://www.tunapoescape.co.nz/?fbclid=IwAR2D-ykPhWkUCOtqwi6kQKZeIhW0HVfpfSrN8aup9s9DdSZZ7JFd3bT5y4w">Tunapo Escape | Romantic Getaway | Kapiti Coast, Wellington</A>
+                <DT><A HREF="https://www.driftawayqueenstown.co.nz/">Driftaway Queenstown</A>
+                <DT><A HREF="https://www.staywaiheke.com/holiday-homes">Waiheke Island Holiday Homes and Short Term Accommodation in Auckland</A>
+                <DT><A HREF="https://putikiestate.co.nz/">Putiki Estate - Waiheke Island&#39;s most luxurious private estate</A>
+                <DT><A HREF="http://www.blackbarn.com/">Black Barn</A>
+                <DT><A HREF="https://www.omanaluxuryvilla.com/">Omana Luxury Villa | Luxurious Waiheke Island Boutique Accommodation</A>
+                <DT><A HREF="https://www.thelindisgroup.com/accommodation/thelindis/pods">Pods | The Lindis</A>
+                <DT><A HREF="https://pipinuipoint.co.nz/">Pipinui Point | Luxury Accommodation Wellington</A>
+                <DT><A HREF="https://www.repose.co.nz/">Repose x Lepperton Farm Stay -  Waiongana, Taranaki</A>
+                <DT><A HREF="https://www.annandale.com/accommodations/seascape">Seascape | Annandale</A>
+                <DT><A HREF="https://www.robertsonlodges.com/the-lodges/matakauri">Matakauri Lodge | Luxury Lodge Accommodation Queenstown</A>
+                <DT><A HREF="https://www.wildcanvas.nz/pohutukawa">Pōhutukawa Tent | wild-canvas</A>
+                <DT><A HREF="https://www.architecturaldigest.com/story/design-lovers-guide-new-zealand">A Design Lover’s Guide to New Zealand | Architectural Digest</A>
+                <DT><A HREF="https://www.allpressolivegroves.co.nz/pages/stay">Allpress Olive Groves</A>
+                <DT><a href="https://www.edwardswhite.co.nz/residential/sisters-sanctuary">Sister Sanctuary in Raglan</a>
+                <DT>
+                    <a href="https://www.rosewoodhotels.com/en/matakauri">Matakauri Lodge</a>
+                    <h4>International</h4>
+                <DT><A HREF="https://www.unyoked.co/">Unyoked</A>
+                <DT><A HREF="https://aubergeresorts.com/wildflower-farms/">Wildflower Farms | New York</A>
+            </DL>
+        <p>
+            <br>
+            <H3>Mindfulness</H3>
+            <DL>
+                <DT><A HREF="https://beta.sala.studio/">Sala</A>
+                <DT><A HREF="https://www.wildpilates.co.nz/">Wild Pilates</A>
+                <DT><A HREF="https://aro-ha.com/">Aro Ha Wellness Retreat | Adventures In Wellbeing</A>
+                <DT><A HREF="https://sattvasoul.co.nz/pages/retreats">Sattva Soul - Retreats</A>
+
+            </DL>
+        <p>
+            <br>
+            <H3>Interior Design</H3>
+            <DL>
+                <DT><A HREF="https://nzsothebysrealty.com/">Houses for Sale in New Zealand | NZ Sotheby’s Realty</A>
+                <DT><A HREF="https://www.nytimes.com/2018/12/20/arts/design/paul-rudolph-beekman-center-for-architecture-modulightor.html">Paul Rudolph at 100: The Mischief Maker in a New Light - The New York Times</A>
+                <DT><A HREF="https://www.domain.com.au/51-ashton-street-camp-hill-qld-4152-2018587775">51 Ashton Street, Camp Hill QLD 4152 | Domain</A>
+                <DT>
+                    <A HREF="https://www.compass.com/listing/5470-los-feliz-boulevard-los-angeles-ca-90027/1357251322264142513/">5470 Los Feliz Boulevard, Los Angeles, CA 90027 | Compass</A>
+                    <h4>Inspiration</h4>
+                <DT><A HREF="https://www.dwell.com/article/plover-fuse-architects-beach-house-renovation-596b6737">60s California Beach House - Fuse Architects</A>
+                <DT><A HREF="https://www.architecturaldigest.com/story/design-lovers-guide-new-zealand">A Design Lover’s Guide to New Zealand | Architectural Digest</A>
+                <DT><A HREF="https://www.studio-fem.com/la-mini">STUDIOFEM</A>
+                <DT><A HREF="https://design-milk.com/an-east-village-apartment-is-reimagined-to-honor-its-character/">East Village Apartment Reimagined</A>
+                <DT><A HREF="https://www.ignant.com/2021/11/19/minimalist-and-surreal-sebastien-baerts-creations-take-us-beyond-the-physical/">Sébastien Baert’s Beyond The Physical - IGNANT</A>
+                <DT><A HREF="https://www.jennikayne.com/blogs/ripandtan/the-ranch-backyard-reveal">Jenni Kayne Ranch</A>
+                <DT><A HREF="https://archipro.co.nz/projects"> Projects | ArchiPro NZ</A>
+                <DT><A HREF="https://www.thedesignchaser.com/">T.D.C</A>
+                <DT><A HREF="https://www.tasicdesigns.com.au/work">Tasic Designs - New House Design, Renovations, Drafting</A>
+                <DT><A HREF="https://www.estliving.com/rk-residence-seear-budd-ross/">RK Residence by Seear-Budd Ross | est living</A>
+                <DT><A HREF="https://www.estliving.com/">est living | exceptional living</A>
+                <DT><A HREF="https://mushstudios.co/">Mush Studios</A>
+                <DT><A HREF="https://studiolawahl.com/#interior-design">Studio Lawahl</A>
+                <DT><A HREF="https://rh.com/us/en/">The world of RH</A>
+                <DT>
+                    <A HREF="https://www.behance.net/nuanceinteriors/appreciated">Aleksandra A on Behance</A>
+                    <h4>Unique Pieces</h4>
+                <DT><A HREF="https://shop.noguchi.org/">Noguchi Museum Shop</A>
+                <DT><A HREF="https://www.kismas.shop/">Table lamps with iconic glass blocks | Kismas</A>
+                <DT><A HREF="https://thelocalproject.com.au/product/10-celebrating-10-issues-of-the-local-project/">Celebrating 10 Issues of The Local Project</A>
+                <DT><A HREF="https://fermliving.com/products/haze-wall-cabinet-cashmere">Haze Wall Cabinet | Wall-mounted cabinet | ferm LIVING</A>
+                <DT><A HREF="https://www.crushmetric.com/products/autohedron-chair">AutoHedron Chair – CRUSHMETRIC</A>
+                <DT>
+                    <a href="http://saeromyoon.com/">Crystal custom tables | Saerom Yoon</a>
+                    <h4>Art</h4>
+                <DT>
+                    <A HREF="https://wernerbronkhorst.com/pages/collections">Collections – Werner Bronkhorst</A>
+                    <h4>Furniture</h4>
+                <DT><A HREF="https://engold.com.au/">En Gold - Designer Furniture &amp; Homewares</A>
+                <DT><A HREF="https://matisse.co.nz/residential">Matisse Residential</A>
+                <DT><a href="https://designmarket.be/uk/">Brussel Design Market</a>
+                <DT>
+                    <A HREF="https://www.thenewcraftsmen.com/collections/matthew-raw">Matthew Raw – The New Craftsmen</A>
+                    <h4>Stores</h4>
+                <DT><A HREF="https://www.oma.com/projects/jacquemus-shop-in-shop">Jacquemus Shop-in-Shop</A>
+                <DT><A HREF="https://www.aimeleondore.com/pages/cafe-leon-dore">Café Leon Dore – Aimé Leon Dore</A>
+                <DT><A HREF="https://www.aesop.com/de/en/r/store-experience/">Our stores and spaces | Aesop</A>
+                <DT><A HREF="https://borro.com/what-dont-i-know-about-hermes-handbags-and-the-history-of-hermes/">Hermes in Amsterdamn</A>
+            </DL>
+    </dl>
+    <p>
+</body>
+</html>
